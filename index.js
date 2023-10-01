@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 app.use(express.json());
+const PORT = process.env.PORT;
 
 
 const auth = (req, res, next) => {
@@ -141,4 +142,4 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-app.listen(5000, () => console.log("Server is Running on 5000"));
+app.listen(PORT, () => console.log(`Server is Running on ${PORT}`));
